@@ -4,6 +4,7 @@
 library("ggplot2", lib.loc="~/Library/R/3.2/library")
 library("ggmap", lib.loc="~/Library/R/3.2/library")
 
+# plot using ggmap
 gridp <- data.frame(expand.grid(lon,lat))
 
 mapImageData <- get_map(
@@ -17,7 +18,7 @@ mapImageData <- get_map(
 ggmap(mapImageData,extent = "normal")+
   geom_point(aes(x= gridp$lon,y=gridp$lat),data=gridp,colour="red",size=2)
 
-
+# map from maps
 library(maps)
 okmap <- map_data("state",region="oklahoma")
 p <- ggplot()
